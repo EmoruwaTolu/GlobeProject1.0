@@ -25,3 +25,44 @@ appearOptions);
 fadingImages.forEach(fadingImg =>{
     appearOnScroll.observe(fadingImg)
 });
+
+//Below is the code for the popup images of the animals in the track
+
+addEventListener('click', (event) => {});
+
+const popupImages1 = document.querySelectorAll('.slide')
+const popupImages = document.querySelectorAll('.carousel-image').forEach(image => {
+    image.onclick = () =>{
+        console.log(image)
+        document.querySelector('.popup').style.display = 'flex'
+        document.querySelector('.popup-img').src = image.getAttribute('src')
+        // console.log(image.getAttribute('id'))
+        const name = speciesPopper(image.getAttribute('id'))
+        console.log(name)
+        const bang = document.querySelector('.animal-info')
+        bang.innerText = name
+        console.log(bang)
+    }
+});
+
+function speciesPopper(species){
+    if(species == "bluebird"){
+        var tinker = "Sialia Sialis (Bluebird)"
+    }
+    if(species == "flamingo" ){
+        var tinker = "Phoenicopterus (Flamingo)"
+    }
+    if(species == "elephant" ){
+        var tinker = "Loxodonta Africana (Elephant)"
+    }
+    if(species == "deer" ){
+        var tinker = "Cervus Nippon (Deer)"
+    }
+    if(species == "lion" ){
+        var tinker = "Panthera Leo (Lion)"
+    }
+    if(species == "tiger" ){
+        var tinker = "Panthera Tigris (Tiger)"
+    }
+    return tinker
+}

@@ -11,7 +11,7 @@ const appearWhenScroll = new IntersectionObserver
         else{
             entry.target.classList.add("bar-growth")
             let numberCounters = document.querySelectorAll('.animal-bar-graph')
-            let speed = 250
+            let speed = 95
             numberCounters.forEach((counter,index) =>{
                 function UpdateCount(){
                     if (counter === entry.target){
